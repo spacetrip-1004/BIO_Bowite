@@ -1,0 +1,15 @@
+P12 results
+-pre : 
+   sample_P12_pre.list.txt (pre파일리스트)
+   P12_pre.exp.gene.COUNT.txt
+   P12_pre.exp.gene.TPM.txt
+   
+-mid
+   sample_P12_mid.list.txt (mid파일리스트)
+   P12_mid.exp.gene.COUNT.txt
+   P12_mid.exp.gene.TPM.txt
+   
+-all : 
+   sample_P12.list.txt (전체파일리스트)
+   P12.exp.gene.COUNT.txt
+   P12.exp.gene.TPM.txt

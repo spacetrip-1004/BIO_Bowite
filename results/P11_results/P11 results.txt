@@ -1,0 +1,15 @@
+P11 results
+-pre : 
+   sample_P11.list.txt (pre파일리스트)
+   P11_pre.exp.gene.COUNT.txt
+   P11_pre.exp.gene.TPM.txt
+   
+-post
+   sample_P11_post.list.txt (post파일리스트)
+   P11_post.exp.gene.COUNT.txt
+   P11_post.exp.gene.TPM.txt
+   
+-all : 
+   sample_p11.list.txt (전체파일리스트)
+   P11.exp.gene.COUNT.txt
+   P11.exp.gene.TPM.txt
