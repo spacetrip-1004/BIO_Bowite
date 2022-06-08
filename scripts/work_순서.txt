@@ -1,0 +1,10 @@
+# sra, fastq.gz 다운
+1. perl wget_sra_fastq.pl P14_post.id.list.txt  :  sh wget_sra_fastq.sh
+perl wget_sra_fastq.pl P14_pre.id.list.txt
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR595/003/SRR5959093/SRR5959093.fastq.gz
+wget ftp://ftp.sra.ebi.ac.uk/vol1/srr/SRR595/003/SRR5959093
+
+
+# fastq -> fasta 변환
+2. perl maker_perl_P14.pl P14_pre.id.list.txt : sh P14_ENA_trans_awk_fasta.sh
+perl maker_perl_P14.pl P14_post.id.list.txt : sh P14_ENA_trans_awk_fasta.sh

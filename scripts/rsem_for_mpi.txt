@@ -1,0 +1,44 @@
+#!/bin/sh
+
+SRR_DIR='/scratch/e1412a01/P9/pre_data/SRR'$1
+RSEM_DIR='/scratch/e1412a01/P9/rsem_pre/rsem_SRR'$1
+
+SRR='SRR'$1
+SDATE=`date +%s`
+
+FILENAME=${RSEM_DIR}
+
+if [ -d "$FILENAME" ]
+then
+rm -rf ${RSEM_DIR}
+echo " delete complete "
+else
+echo " No directory :"${RSEM_DIR}
+fi
+
+
+/scratch/e1412a01/software/sratoolkit.2.11.0-centos_linux64/bin/fastq-dump  --defline-seq '@$sn[_$rn]_$ri' --split-files ${SRR_DIR}.1
+cat ${SRR_DIR}.1_1.fastq | sed -n '1~4s/^@/>/p;2~4p' > ${SRR_DIR}.1.fasta
+
+mkdir -p ${RSEM_DIR}
+rsem-calculate-expression -p 4 --no-qualities ${SRR_DIR}.1.fasta  /scratch/e1412a01/RNAseq/GENOME_data/rsem/hg19_bowtie13  ${RSEM_DIR}/${SRR}.rsem >& ${RSEM_DIR}/${SRR}.rsem.log
+
+EDATE=`date +%s`
+echo " ${SRR} P14 results finished total: $(($EDATE - $SDATE)) " 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+#!/bin/sh
+
+
+SRR_DIR='/scratch/e1412a01/P9/ENA_P9_pre_data/SRR'$1
+RSEM_DIR='/scratch/e1412a01/P9/ENA_P9_rsem_pre/rsem_SRR'$1
+
+SRR='SRR'$1
+STARTTIME=$(date +%s)
+
+mkdir -p ${RSEM_DIR}
+rsem-calculate-expression -p 4 --no-qualities ${SRR_DIR}.1.fasta  /scratch/e1412a01/RNAseq/GENOME_data/rsem/hg19_bowtie13  ${RSEM_DIR}/${SRR}.rsem >& ${RSEM_DIR}/${SRR}.rsem.log
+NOWDATE=`date`
+ENDTIME=$(date +%s)
+echo "$NOWDATE  ${SRR} total : $(($ENDTIME - $STARTTIME)) seconds to complete this task"

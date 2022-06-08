@@ -1,0 +1,48 @@
+# P1
+rsync -av -e ssh /scratch/x2304a03/P1 e1412a01@localhost:/scratch/e1412a01/
+
+sent 138,741,113,820 bytes  received 50,472 bytes  99,634,588.36 bytes/sec
+total size is 346,840,265,793  speedup is 2.50
+
+#P2
+rsync -av -e ssh /scratch/x2304a03/P2 e1412a01@localhost:/scratch/e1412a01/
+
+sent 77,748,736,173 bytes  received 16,105 bytes  112,272,566.47 bytes/sec
+total size is 550,504,738,561  speedup is 7.08
+
+
+#P6
+rsync -av -e ssh /scratch/x2304a03/P6 e1412a01@localhost:/scratch/e1412a01/
+
+sent 142,505,974,921 bytes  received 53,853 bytes  103,678,449.45 bytes/sec
+total size is 142,471,013,680  speedup is 1.00
+
+
+
+#P11
+rsync -av -e ssh /scratch/x2304a03/P11 e1412a01@localhost:/scratch/e1412a01/
+
+sent 32,356,797,073 bytes  received 10,497 bytes  102,233,199.27 bytes/sec
+total size is 243,165,918,803  speedup is 7.52
+
+
+#P12
+rsync -av -e ssh /scratch/x2304a03/P12 e1412a01@localhost:/scratch/e1412a01/
+
+sent 82,102,164,741 bytes  received 44,938 bytes  106,834,365.23 bytes/sec
+total size is 775,389,514,551  speedup is 9.44
+
+#P15
+rsync -av -e ssh /scratch/x2304a03/P15 e1412a01@localhost:/scratch/e1412a01/
+
+sent 22,535,016,102 bytes  received 13,238 bytes  76,260,674.59 bytes/sec
+total size is 955,683,913,469  speedup is 42.41
+
+# bowtie2
+rsync -av -e ssh /scratch/x2304a03/BOWTIE2 e1412a01@localhost:/scratch/e1412a01/
+
+sent 11,993 bytes  received 38 bytes  178.24 bytes/sec
+total size is 31,913,228,526  speedup is 2,652,583.20
+
+
+
